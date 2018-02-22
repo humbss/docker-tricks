@@ -1,4 +1,7 @@
 
+# Run a docker registry
+docker run -d -p 5000:5000 --name registry registry:2
+
 # Run a mysql 5.6 container, is recommended to create a data volume outside the container, use -v parameter for the external volume.
 docker run -d --name=db-instance -v /home/username/db/mysql_db:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -p 3310:3306 mysql:5.6
 
