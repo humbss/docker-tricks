@@ -1,0 +1,10 @@
+version: '2'
+ 
+services:
+  proxy:
+    build:
+      context:  ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+
