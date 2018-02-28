@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  proxy:
+    build:
+      context: ./httpd-ssl
+      dockerfile: Dockerfile
+    ports:
+      - "443:443"
+  backend: 
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
