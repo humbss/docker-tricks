@@ -3,10 +3,14 @@
 docker run -d -p 5000:5000 --name registry registry:2
 
 # Run a mysql 5.6 container, is recommended to create a data volume outside the container, use -v parameter for the external volume.
-docker run -d --name=db-instance -v /home/username/db/mysql_db:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -p 3310:3306 mysql:5.6
+docker run -d --name=db-instance -v /home/username/db/mysql_db:/var/lib/mysql:Z -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -p 3310:3306 mysql:5.6
 
 # Run a Apache 2 container, is optional to mount the doc root diractory outside the container
 sudo docker run -dit --name apache-web -p 80:80 -v "$PWD":/usr/local/apache2/htdocs/ httpd:2.4
+
+# Run a postgress container
+docker run -d --name=pgsql_container -v /home/appus/db/pgsql_db:/var/lib/postgresql/data:Z -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=yourpassword -p 5432:5432  postgres
+
 
 
 
