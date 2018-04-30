@@ -1,1 +1,1 @@
-Note that httpd.conf has a proxy pass to a backend fake host.
+Note that httpd.conf has a proxy pass to a fake backend host.
